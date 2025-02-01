@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:24:39 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/01 17:31:37 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/01 22:07:26 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,14 +106,38 @@ void PhoneBook::printTable()
     }
 }
 
+void PhoneBook::printContactInfo()
+{
+    int index;
+    string input;
+    
+    while (1)
+    {
+        std::cout << "Type the index of the contact to get the info:" <<std::endl;
+        std::getline(std::cin, input);
+        index = atoi(input.c_str());
+        if (index >= this->_total || index < 0)
+            std::cout << "Please input the valid index number" << std::endl;
+        else
+            break ;
+    }
+    std::cout << "First name: " << this->_contact[index].getFirstName() << std::endl;
+    std::cout << "Last name: " << this->_contact[index].getLastName() << std::endl;
+    std::cout << "Nick name: " << this->_contact[index].getNickName() << std::endl;
+    std::cout << "Phone number: " << this->_contact[index].getPhoneNumber() << std::endl;
+    std::cout << "Darkest secret: " << this->_contact[index].getDarkestSecret() << std::endl;
+    std::cout << "Press enter to continue..." << std::endl;
+    std::cin.ignore();
+}
+
 void PhoneBook::searchContact()
 {
+    
     if (this->_total == 0)
     {
         std::cout << "The Phonebook is empty" << std::endl;
         return;
     }
     printTable();
-    // printtable
-    
+    printContactInfo();
 }

@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:28:06 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/01 17:12:20 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/01 18:27:40 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-#define MAX 8;
-#define WIDTH 10;
+// #define MAX 8;
+// #define WIDTH 10;
 //create a header file for combine file
 
 class PhoneBook
@@ -33,6 +33,7 @@ class PhoneBook
 	void	setContact(string name, string last, string nick, string num, string secret);
 	void	searchContact();
 	void	printTable();
+	void	printContactInfo();
 	//Add contact
 	// Search
 	//Print
