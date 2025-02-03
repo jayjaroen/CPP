@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:40:10 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/01 14:34:30 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:31:29 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <cstdlib> //atoi // system("clear")
 #include <string> // lenght, substr
 #include <iomanip> // for std::setw()
+#include <unistd.h> // sleep function
+#include <cstddef> //size_t
 // getter && setter
 typedef std::string string;
 
@@ -26,7 +28,7 @@ class Contact
 			string	_firstName;
 			string	_lastName;
 			string	_nickName;
-			string	_phoneNumber; //why not int
+			string	_phoneNumber;
 			string	_darkestSecret;
 		
 	public:

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:24:39 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/01 22:07:26 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:43:12 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 PhoneBook::PhoneBook()
 {
-    this->_current = 0;
-    this->_total = 0;
+	this->_current = 0;
+	this->_total = 0;
 }
 
 PhoneBook::~PhoneBook()
 {
-    
+
 }
 
 void PhoneBook::setContact(string name, string last, string nick, string num, string secret)
@@ -42,6 +42,8 @@ void PhoneBook::setContact(string name, string last, string nick, string num, st
 string PhoneBook::addUserInput(const string prompt)
 {
     string  input;
+	size_t	first;
+	size_t	last;
     
     system("clear");
     while (input.empty())
@@ -50,8 +52,17 @@ string PhoneBook::addUserInput(const string prompt)
         system("clear");
         std::cout << prompt << std::endl;
         std::getline(std::cin, input);
+		first = input.find_first_not_of(" \b\t\n\v\f\r");
+		if (first == std::string::npos)
+		{
+			system("clear");
+			std::cout << "Invalid Input" << std::endl;
+			input = "";
+			sleep(1);
+		}
     }
-    return (input);
+	last = input.find_last_not_of(" \b\t\n\v\f\r");
+    return input.substr(first, last - first + 1);
 }
 
 void PhoneBook::addContact()
@@ -66,7 +77,7 @@ void PhoneBook::addContact()
     name = addUserInput("Please enter a firstname:");
     last = addUserInput("Please enter a lastname:");
     nick = addUserInput("Please enter a nickname:");
-    num = addUserInput("Please enter a phone number:");
+    num = addUserInput("Please enter a phone number:");//only number allow for the num?
     secret = addUserInput("Please enter a darkest secret:");
     setContact(name, last, nick, num, secret);
     this->_current++;
@@ -132,10 +143,10 @@ void PhoneBook::printContactInfo()
 
 void PhoneBook::searchContact()
 {
-    
     if (this->_total == 0)
     {
         std::cout << "The Phonebook is empty" << std::endl;
+		sleep(1);
         return;
     }
     printTable();
