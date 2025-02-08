@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:46:58 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/03 15:54:00 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/08 16:05:40 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,32 @@
 
 int main (void)
 {
-	// should handle the control D?
 	PhoneBook phoneBook;
 	string input;
 	
-	std::cout << "Welcome to CPP PhoneBook!" << std::endl;
+	system("clear");
+	std::cout << "++++++ Welcome to CPP PhoneBook ++++++!" << std::endl;
 	while (1)
 	{
+		sleep(1);
 		system("clear");
 		std::cout << "Please select & type precisely the operation: ADD, SEARCH, EXIT" << std::endl;
 		std::getline(std::cin, input);
-		// trim the input && ensure that isn't null
-		// system clear after
-		if (!input.compare("ADD"))
+		if (input == "ADD")
 			phoneBook.addContact();
-		else if (!input.compare("SEARCH"))
+		else if (input == "SEARCH") 
 			phoneBook.searchContact();
-		else if (!input.compare("EXIT"))
+		else if (input == "EXIT" || std::cin.eof())
 		{
-			std::cout << "Exit the program" << std::endl;
-			break ;
+			std::cout << "Exiting the program!" << std::endl;
+			exit(0);
 		}
 		else
 			std::cout << "Wrong operation!" << std::endl;
-		// system("clear");
 	}
 	return (0);
 }
+/// TO Edit
+// signal handling, search enter output, main function worng operation, makefile // header ( revise header) , input== "ADD"
+// Debugger
+// Control D

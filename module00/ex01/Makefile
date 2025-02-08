@@ -3,28 +3,43 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+         #
+#    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/22 14:21:11 by jjaroens          #+#    #+#              #
-#    Updated: 2025/02/01 14:36:42 by jjaroens         ###   ########.fr        #
+#    Updated: 2025/02/08 16:45:29 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRC = main.cpp PhoneBook.cpp Contact.cpp #header files?
+SRC = main.cpp PhoneBook.cpp Contact.cpp
 
-CC = c++ -Wall -Wextra -Werror -std=c++98
+HEADER = Contact.hpp PhoneBook.hpp
+
+CC = c++ -Wall -Wextra -Werror -std=c++98 ##debug
+
+OBJ_DIR = obj/
+
+OBJ_FILES = $(SRC:.cpp=.o)
+
+OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(SRC) -o $(NAME)
+# $(NAME): $(SRC) Makefile
+# 	$(CC) $(SRC) -o $(NAME)
+$(NAME): $(OBJ) $(HEADER)
+		$(CC) $(OBJ) -o $(NAME)
+
+$(OBJ_DIR)%.o: %.cpp $(HEADER) Makefile
+		@mkdir -p $(OBJ_DIR)
+		$(CC) -I. -o $@ -c $<
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
 

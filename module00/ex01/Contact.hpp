@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:40:10 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/03 16:31:29 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/08 15:22:54 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
-#include <cstdlib> //atoi // system("clear")
+#include <cstdlib> //atoi // system("clear") // exit
 #include <string> // lenght, substr
 #include <iomanip> // for std::setw()
 #include <unistd.h> // sleep function
