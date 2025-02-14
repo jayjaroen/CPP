@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 12:27:13 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/13 12:04:08 by jjaroens         ###   ########.fr       */
+/*   Created: 2025/02/13 13:09:56 by jjaroens          #+#    #+#             */
+/*   Updated: 2025/02/13 15:03:32 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype> //to_upper
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int main(int argc, char **argv)
+#include <iostream>
+#include <string>
+
+class Zombie
 {
-	int i;
-	int j;
-	
-	i = 1;
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
-	}
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			std::cout << (char) std::toupper(argv[i][j]);
-			// std::cout << static_cast <char> (std::toupper(argv[i][j]));
-			j++;
-		}
-		i++;
-	}
-	std::cout << std::endl;
-	return (0);
-}
+    private:
+        std::string _name;
+        
+    public:
+        Zombie(std::string name); // Parameterize constructor
+        Zombie(); // default constructor
+        ~Zombie();
+        void announce();
+        void setName(std::string name);
+};
+
+Zombie* zombieHorde(int n, std::string name);
+
+#endif
