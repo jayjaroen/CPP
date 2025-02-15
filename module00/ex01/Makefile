@@ -6,7 +6,7 @@
 #    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/22 14:21:11 by jjaroens          #+#    #+#              #
-#    Updated: 2025/02/08 16:45:29 by jjaroens         ###   ########.fr        #
+#    Updated: 2025/02/15 12:46:12 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.cpp PhoneBook.cpp Contact.cpp
 
 HEADER = Contact.hpp PhoneBook.hpp
 
-CC = c++ -Wall -Wextra -Werror -std=c++98 ##debug
+CC = c++ -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR = obj/
 
@@ -26,8 +26,6 @@ OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 all: $(NAME)
 
-# $(NAME): $(SRC) Makefile
-# 	$(CC) $(SRC) -o $(NAME)
 $(NAME): $(OBJ) $(HEADER)
 		$(CC) $(OBJ) -o $(NAME)
 

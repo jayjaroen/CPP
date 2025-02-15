@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 12:27:13 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/13 12:04:08 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/15 13:00:34 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int main(int argc, char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 	
 	i = 1;
 	if (argc == 1)
@@ -30,9 +30,9 @@ int main(int argc, char **argv)
 		while (argv[i][j])
 		{
 			std::cout << (char) std::toupper(argv[i][j]);
-			// std::cout << static_cast <char> (std::toupper(argv[i][j]));
 			j++;
 		}
+		std::cout << " ";
 		i++;
 	}
 	std::cout << std::endl;

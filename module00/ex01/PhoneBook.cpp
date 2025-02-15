@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:24:39 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/08 16:24:15 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/15 13:35:07 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,6 @@ void PhoneBook::printContactInfo()
 
 	while (1)
 	{
-		std::cout << "The number of total is: " << this->_total << std::endl;
 		std::cout << "Type the index of the contact to get the info:" <<std::endl;
 		std::getline(std::cin, input);
 		if (std::cin.eof())
@@ -154,7 +153,7 @@ void PhoneBook::printContactInfo()
 		else if (isDigit(input))
 		{
 			index = atoi(input.c_str());
-			if (index <= this->_total - 1 && index > -1) // edit the _total
+			if (index <= this->_total - 1 && index > -1)
 				break ;
 			else
 				std::cout << "Please input the valid index number" << std::endl;
