@@ -3,37 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:09:24 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/13 15:04:06 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/20 13:31:23 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name):_name(name)
 {
-    this->_name = name;
+	std::cout << "Parameterized constructor called" << std::endl;
 }
 
-Zombie::Zombie()
+Zombie::Zombie():_name("")
 {
-    
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Zombie::~Zombie()
 {
-    
+	std::cout << _name << " destroyed" << std::endl;
 }
 
 void Zombie::setName(std::string name)
 {
-    this->_name = name;
+	_name = name;
 }
 
 
 void Zombie::announce()
 {
-    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << _name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 }

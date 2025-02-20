@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 22:13:18 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/13 11:11:41 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/20 13:21:49 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int main(void)
 {
-    Zombie *zb;
 
-    zb = NULL;
-    zb = zb->newZombie("Jay");
-    zb->randomChump("Yaj");
-    delete zb;
-    zb = NULL;
+	Zombie zombie("name");
+	zombie.announce();
+	Zombie *zb = newZombie("Jay");
+	zb->announce();
+	delete zb;
+	randomChump("Yaj");
+	
 }
 
 /* In modern C++, it’s recommended to use smart pointers like std::unique_ptr 

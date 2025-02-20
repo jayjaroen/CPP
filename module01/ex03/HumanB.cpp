@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 21:21:23 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/14 22:04:53 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/20 14:20:31 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): _name(name), weapon(nullptr)
+HumanB::HumanB(std::string name): _name(name), weapon(NULL) //overload
 {
     
 }

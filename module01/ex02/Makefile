@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+         #
+#    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 15:10:04 by jjaroens          #+#    #+#              #
-#    Updated: 2025/02/13 17:07:04 by jjaroens         ###   ########.fr        #
+#    Updated: 2025/02/20 13:47:16 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 all: $(NAME)
 
-# $(NAME): $(OBJ) $(HEADER)
-# 		$(CC) $(OBJ) -o $(NAME) 
-# Mac
 $(NAME): $(OBJ) $(HEADER)
-		$(CC) -fsanitize=address -g $(OBJ) -o $(NAME) 
+		$(CC) $(OBJ) -o $(NAME) 
+# Mac
+# $(NAME): $(OBJ) $(HEADER)
+# 		$(CC) -fsanitize=address -g $(OBJ) -o $(NAME) 
 
 $(OBJ_DIR)%.o: %.cpp $(HEADER) Makefile
 		@mkdir -p $(OBJ_DIR)

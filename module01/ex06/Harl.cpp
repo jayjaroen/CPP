@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 21:59:07 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/19 22:36:10 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:40:08 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,30 +54,32 @@ void	Harl::complain(std::string level)
 	}
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	std::transform(level.begin(), level.end(), level.begin(), ::toupper);
-	for (int i = 0; i < 4; i++)
+	int i = 0;
+	for (; i < 4; i++)
 	{
 		if (levels[i] == level)
 		{
-			switch(i)
-			{
-				case 0:
-					this->debug();
-					break;
-				case 1:
-					this->info();
-					break;
-				case 2:
-					this->warning();
-					break;
-				case 3:
-					this->error();
-					break;
-			}
-			return;
+			break;
 		}
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	if (i == 4)
+	{
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		return;
+	}
+	switch(i)
+	{
+		case 0:
+			debug();
+		case 1:
+			info();
+		case 2:
+			warning();
+		case 3:
+			error();
+	}
 }
+//Switch statement
 
 //std::transform(start, end, result, operation);
 // start → Iterator pointing to the beginning of the range.
