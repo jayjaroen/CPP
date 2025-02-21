@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:18:36 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/20 16:29:02 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:52:20 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,13 @@ int main(int argc, char **argv)
 		std::cout << "Wrong number of arguments" << std::endl;
 		return (1);
 	}	
-	const std::string file = argv[1];
 	const std::string original = argv[2];
+	if (original.empty())
+	{
+		std::cout << "Word to find is emptied" << std::endl;
+		return (1);
+	}
+	const std::string file = argv[1];
 	const std::string replace = argv[3];
 	const std::string copyFile = file + ".replace";
 	copyAndReplace(file, original, replace, copyFile);
