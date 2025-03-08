@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 21:59:07 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/20 16:40:08 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/08 14:25:26 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ Harl::Harl()
 
 Harl::~Harl()
 {
-    
+
 }
 
 void	Harl::debug(void)
 {
-    std::cout << "[DEBUG]\nI love having extra bacon for my 7XL-double-cheese-triple-pickle-special- \
+	std::cout << "[DEBUG]\nI love having extra bacon for my 7XL-double-cheese-triple-pickle-special- \
 ketchup burger.\nI really do!" << std::endl;
 }
 
 void	Harl::info(void)
 {
-    std::cout << "[INFO]\nI cannot believe adding extra bacon costs more money.\nYou didn’t put \
+	std::cout << "[INFO]\nI cannot believe adding extra bacon costs more money.\nYou didn’t put \
 enough bacon in my burger!\nIf you did, I wouldn’t be asking for more!" << std::endl;
 }
 
