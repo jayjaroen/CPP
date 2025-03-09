@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 09:59:12 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/20 13:46:16 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:31:00 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie(std::string name):_name(name) // list initialize
 {
-	std::cout << _name << " zombie is created" << std::endl; //this == pointer || ref?
+	std::cout << _name << " zombie is created" << std::endl; //this == reference to an object
 }
 
 Zombie::Zombie():_name("")

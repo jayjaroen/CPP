@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 21:27:05 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/05 19:50:17 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/09 15:08:50 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 # define FIXED_H
 
 #include <iostream>
+#include <cmath>
 
-class Fixed
+class	Fixed
 {
-    private:
+	private:
 		int	_value;
 		static const int	_bits = 8;
 		
-    public:
+	public:
 		Fixed();
 		Fixed(const int num); // convert to a corresponding fixed point value
-		Fixed(const float f); // convert to a corresponding fixed point value
+		Fixed(const float f);
 		~Fixed();
 		Fixed(const Fixed &other);
-		
 		Fixed& operator=(const Fixed &other);
+		
 		Fixed operator+(Fixed const &other) const;
 		Fixed operator-(Fixed const &other) const;
 		Fixed operator*(Fixed const &other) const;
@@ -56,7 +57,8 @@ class Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 
-		
 };
+
 std::ostream& operator<<(std::ostream &out, Fixed const &fixed);
+
 #endif

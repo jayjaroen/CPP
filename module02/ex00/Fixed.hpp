@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 21:30:16 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/27 21:35:21 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/09 13:19:25 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 class Fixed
 {
-    private:
+	private:
 		int	_value;
 		static const int	_bits = 8;
 		
-    public:
+	public:
 		Fixed();
 		~Fixed();
 		Fixed(const Fixed &other);

@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 22:13:18 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/20 13:21:49 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:35:45 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int main(void)
 {
 
-	Zombie zombie("name");
+	Zombie zombie("haha");
 	zombie.announce();
 	Zombie *zb = newZombie("Jay");
 	zb->announce();
 	delete zb;
 	randomChump("Yaj");
-	
+	return(0);
 }
 
 /* In modern C++, it’s recommended to use smart pointers like std::unique_ptr 

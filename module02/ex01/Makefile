@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+         #
+#    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/01 20:49:25 by jjaroens          #+#    #+#              #
-#    Updated: 2025/03/01 20:49:40 by jjaroens         ###   ########.fr        #
+#    Updated: 2025/03/09 15:59:30 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
 		$(CC) $(OBJ) -o $(NAME) 
-# Mac
-# $(NAME): $(OBJ) $(HEADER)
-# 		$(CC) -fsanitize=address -g $(OBJ) -o $(NAME) 
 
 $(OBJ_DIR)%.o: %.cpp $(HEADER) Makefile
 		@mkdir -p $(OBJ_DIR)

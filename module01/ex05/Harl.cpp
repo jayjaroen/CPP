@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 22:32:10 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/19 21:04:40 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/08 14:23:23 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ Harl::Harl()
 
 Harl::~Harl()
 {
-    
+
 }
 
 void	Harl::debug(void)
 {
-    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special- \
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special- \
 ketchup burger. I really do!" << std::endl;
 }
 
 void	Harl::info(void)
 {
-    std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put \
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put \
 enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 

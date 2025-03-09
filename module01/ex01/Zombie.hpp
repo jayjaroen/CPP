@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:09:56 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/02/20 13:27:20 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:42:28 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie
 		std::string _name;
 
 	public:
-		Zombie(std::string name); // Parameterize constructor
+		Zombie(std::string name); // Parameterized constructor
 		Zombie(); // default constructor
 		~Zombie();
 		void announce();
