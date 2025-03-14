@@ -5,22 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 16:30:36 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/13 21:36:10 by jjaroens         ###   ########.fr       */
+/*   Created: 2025/03/12 21:39:22 by jjaroens          #+#    #+#             */
+/*   Updated: 2025/03/13 22:24:39 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
 	ClapTrap a("A");
-	// ClapTrap b("");
-	a.attack("b");
-	a.attack("b");
-	a.takeDamage(-34);
-	std::cout << a.getHitPoints() << std::endl;
-	a.attack("b");
-	// std::cout << "the name is: " << b.getName() << std::endl;
+	ScavTrap b("B");
+	ScavTrap c(b);
+	std::cout << "***c is " << c.getName() << std::endl;
+	
+	a.attack("what");
+	b.attack("you");
 }
-// Energy points && Health points can be increased and decreased

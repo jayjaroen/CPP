@@ -5,22 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 16:30:36 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/13 21:36:10 by jjaroens         ###   ########.fr       */
+/*   Created: 2025/03/14 15:00:37 by jjaroens          #+#    #+#             */
+/*   Updated: 2025/03/14 15:05:23 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-	ClapTrap a("A");
-	// ClapTrap b("");
-	a.attack("b");
-	a.attack("b");
-	a.takeDamage(-34);
-	std::cout << a.getHitPoints() << std::endl;
-	a.attack("b");
-	// std::cout << "the name is: " << b.getName() << std::endl;
+	FragTrap a("ddd");
+	FragTrap b(a);
+	// ClapTrap c("kkk");
+
+	b.getName();
 }
-// Energy points && Health points can be increased and decreased
+// The process of initization 

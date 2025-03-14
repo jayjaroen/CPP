@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 16:30:36 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/13 21:36:10 by jjaroens         ###   ########.fr       */
+/*   Created: 2025/03/14 20:12:01 by jjaroens          #+#    #+#             */
+/*   Updated: 2025/03/14 22:30:32 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int main(void)
-{
-	ClapTrap a("A");
-	// ClapTrap b("");
-	a.attack("b");
-	a.attack("b");
-	a.takeDamage(-34);
-	std::cout << a.getHitPoints() << std::endl;
-	a.attack("b");
-	// std::cout << "the name is: " << b.getName() << std::endl;
-}
-// Energy points && Health points can be increased and decreased
+// DiamondTrap::DiamondTrap(): CrapTrap(), ScavTrap(), FragTrap()
+// {
+//     std::cout << "DiamondTrap: Default Constructor Called" << std::endl;
+//     _name = "";
+//     _hitPoints = FragTrap::_hitPoints;
+    
+// }

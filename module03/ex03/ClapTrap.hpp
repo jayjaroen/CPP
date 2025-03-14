@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:04:55 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/13 21:31:34 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/13 21:54:35 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 class ClapTrap //Follow the orthodox canical form
 {
-    private:
+    protected:
 		std::string	_name;
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;
