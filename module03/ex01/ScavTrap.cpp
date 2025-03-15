@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:34:30 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/14 14:56:42 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/15 16:16:43 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ ScavTrap::ScavTrap()
 	_hitPoints = SCAV_HP;
 	_energyPoints = SCAV_ENERGY;
 	_attackDamage = SCAV_ATTACK;
+	
 	std::cout << "ScavTrap: Default Constructor Called" << std::endl;
 	std::cout << SCAV_TYPE << _name << " is created" << std::endl;
 	std::cout << "Hit points init: " << _hitPoints << std::endl;
@@ -31,6 +32,7 @@ ScavTrap::ScavTrap(const std::string name)
 	_hitPoints = SCAV_HP;
 	_energyPoints = SCAV_ENERGY;
 	_attackDamage = SCAV_ATTACK;
+	
 	std::cout << "ScavTrap: Parameter Constructor Called" << std::endl;
 	std::cout << SCAV_TYPE << _name << " is created" << std::endl;
 	std::cout << "Hit points init: " << _hitPoints << std::endl;
@@ -78,7 +80,7 @@ void ScavTrap::attack(const std::string &target) // derived from ClapTrap
 
 void ScavTrap::guardGate()
 {
-    std::cout << SCAV_TYPE << _name << " is now in Gate Keeper mode" << std::endl;
+	std::cout << SCAV_TYPE << _name << " is now in Gate Keeper mode" << std::endl;
 }
 
 /*

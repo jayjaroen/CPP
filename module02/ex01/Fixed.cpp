@@ -6,20 +6,23 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 20:50:31 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/09 15:00:30 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/15 14:04:57 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(): _value(0)// first init
+Fixed::Fixed(): _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Debugging address: " << this << std::endl;
 }
 
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Debugging: " << toInt() << std::endl;
+	// std::cout << "Degbugging address: " << this << std::endl;
 }
 
 Fixed::Fixed(const float f)
@@ -39,7 +42,7 @@ Fixed::Fixed(const int num)
 Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other; //check
+	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed &other)
@@ -52,7 +55,7 @@ Fixed& Fixed::operator=(const Fixed &other)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return _value;
 }
 
@@ -64,7 +67,7 @@ void	Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat() const
 {
-    // convert fixed point to float
+	// convert fixed point to float
 	return (float)_value / (float)(1 << _bits);
 }
 
@@ -75,6 +78,8 @@ int Fixed::toInt() const
 
 std::ostream& operator<<(std::ostream &out, Fixed const &fixed)
 {
+	// class obj to be printed
+	// std::cout << "Operator overloading function called" << std::endl;
 	out << fixed.toFloat();
 	return out;
 }

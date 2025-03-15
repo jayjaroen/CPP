@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:04:46 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/14 14:42:47 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/15 16:18:18 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAV_TRAP_H
 # define SCAV_TRAP_H
 
-// # include <iostream>
-// # include <string>
 # include "ClapTrap.hpp"
 # define SCAV_HP 100
 # define SCAV_ENERGY 50
