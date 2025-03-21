@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:25:15 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/14 14:57:43 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/21 23:18:07 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ FragTrap::FragTrap(const std::string name)
 FragTrap::FragTrap(FragTrap const &other): ClapTrap(other)
 {
 	std::cout << "FragTrap: Copy Constructor Called" << std::endl;
-	std::cout << "1" << std::endl;
+	// std::cout << "1" << std::endl;
 	*this = other;
 	// call operator=
 }
@@ -53,7 +53,7 @@ FragTrap::~FragTrap()
 
 FragTrap& FragTrap::operator=(FragTrap const &other)
 {
-	std::cout << "2" << std::endl;
+	// std::cout << "2" << std::endl;
 	if (this != &other)
 	{
 		_name = other.getName();
@@ -78,5 +78,8 @@ void FragTrap::attack(const std::string &target)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << FRAG_TYPE << _name << "is giving high fives!" << std::endl;
+	if (_energyPoints > 0 && _hitPoints > 0)
+		std::cout << FRAG_TYPE << _name << "is giving high fives!" << std::endl;
+	else
+		std::cout << FRAG_TYPE << _name << " does have enough energy points" << std::endl;
 }

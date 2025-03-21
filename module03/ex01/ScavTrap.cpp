@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:34:30 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/15 16:16:43 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/21 23:15:36 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,10 @@ void ScavTrap::attack(const std::string &target) // derived from ClapTrap
 
 void ScavTrap::guardGate()
 {
-	std::cout << SCAV_TYPE << _name << " is now in Gate Keeper mode" << std::endl;
+	if (_energyPoints > 0 && _hitPoints > 0)
+		std::cout << SCAV_TYPE << _name << " is now in Gate Keeper mode" << std::endl;
+	else
+		std::cout << SCAV_TYPE << _name << " does have enough energy points" << std::endl;
 }
 
 /*
