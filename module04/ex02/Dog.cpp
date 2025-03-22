@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 22:14:49 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 22:52:36 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 22:45:55 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ Dog::~Dog()
 
 Dog::Dog(Dog const &other): AAnimal(other)
 {
-    *this = other;
+    std::cout << "Dog copy constructor called" << std::endl;
+    _type = other.getType();
+	_brain = new Brain(*other._brain); //deep copy
 }
 
 Dog& Dog::operator=(Dog const &other)

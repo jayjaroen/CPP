@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 22:20:53 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 23:00:28 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 21:31:56 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int main()
 	std::cout << b.getType() << std::endl;
 	a.makeSound();
 	b.makeSound();
-	std::cout << a.getBrain()->getRandomIdea() << std::endl;
-	std::cout << b.getBrain()->getRandomIdea() << std::endl;
+	std::cout << a.getBrain()->getIdea() << std::endl; //why access via getIdea first?
+	std::cout << b.getBrain()->getIdea() << std::endl;
 
 	return (0);
 }

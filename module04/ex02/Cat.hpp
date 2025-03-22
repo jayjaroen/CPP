@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 20:56:49 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 22:51:44 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 21:51:35 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 class Cat: public AAnimal
 {
-    // private string (type) is derived from Animal
     private:
         Brain *_brain;
     

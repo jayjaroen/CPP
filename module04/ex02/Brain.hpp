@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:56:37 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 18:32:50 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 21:30:01 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class Brain
 		Brain(Brain const &other);
 		Brain& operator=(Brain const &other);
 		
-		std::string getRandomIdea() const;
-		std::string getRandomIdea(int index) const;
+		std::string getIdea() const;
+		std::string getIdea(int index) const;
 		void setIdea(int index, std::string idea);
 };
 

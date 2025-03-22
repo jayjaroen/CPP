@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 22:10:32 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 17:29:17 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 21:57:01 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Brain::Brain()
     while (i < 100)
     {
         _ideas[i] = _ideaCreator();
-		std::cout << "No. " << i << " Idea is " << _ideas[i] << std::endl;
+		// std::cout << "No. " << i << " Idea is " << _ideas[i] << std::endl;
         i++;
     }
 }
@@ -58,15 +58,15 @@ std::string Brain::_ideaCreator() const
 	return ideas[random];
 }
 
-std::string Brain::getRandomIdea() const
+std::string Brain::getIdea() const
 {
 	int ideaCount = sizeof(_ideas) / sizeof(_ideas[0]); // get from an array of ideas
     int random = std::rand() % ideaCount;
-	std::cout << "Random idea is: " << _ideas[random] << std::endl;
+	// std::cout << "Random idea is: " << _ideas[random] << std::endl;
 	return _ideas[random];
 }
 
-std::string Brain::getRandomIdea(int index) const
+std::string Brain::getIdea(int index) const
 {
     if (index < 0 || index >= 100)
        return "Invalid index number";
