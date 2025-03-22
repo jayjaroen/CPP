@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 22:20:53 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 17:37:00 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 16:42:20 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,19 @@
 #include "WrongAnimal.hpp"
 #include "Brain.hpp"
 
-int main() {
-    Animal* array[100];
-	// std::srand(std::time(0));  // seed the random generator
-
-    int i = 0;
-    while (i < 50)
-        array[i++] = new Dog();
-    while (i < 100)
-        array[i++] = new Cat();
+//animal don't have an access to brain
+// std::srand(std::time(0));  // seed the random generator
+int main() 
+{
+	Animal* animals[10];
+	
+	int i = 0;
+	while (i < 5)
+		animals[i++] = new Dog();
+	while (i < 10)
+		animals[i++] = new Cat();
+	for (i = 0; i < 10; i++)
+		delete animals[i];
 	// std::cout << "++++++++++++++++++++++++++++++++++++++++" << std::endl;
 	// for (i = 0; i < 100; i++) 
 	// {
@@ -36,20 +40,17 @@ int main() {
 	// 	else
 	// 		std::cout << "No brain!" << std::endl;
 	// }
-	std::cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
-	std::cout << array[49]->getType() << std::endl;
-	array[49]->makeSound();
-	std::cout << array[49]->getBrain()->getRandomIdea(49) << std::endl;
-	array[49]->getBrain()->setIdea(49, "hahaha");
-	std::cout << "New idea is " << array[49]->getBrain()->getRandomIdea(49) << std::endl;
+	// std::cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+	// std::cout << array[49]->getType() << std::endl;
+	// array[49]->makeSound();
+	// std::cout << array[49]->getBrain()->getRandomIdea(49) << std::endl;
+	// array[49]->getBrain()->setIdea(49, "hahaha");
+	// std::cout << "New idea is " << array[49]->getBrain()->getRandomIdea(49) << std::endl;
 	
-	std::cout << array[50]->getType() << std::endl;
-	array[50]->makeSound();
-	std::cout << array[50]->getBrain()->getRandomIdea(49) << std::endl;
-    for (i = 0; i < 100; i++)
-        delete array[i];
-    return 0;
-
-	// brain->getRandomIdea();
-	// brain->getRandomIdea(34);
+	// std::cout << array[50]->getType() << std::endl;
+	// array[50]->makeSound();
+	// std::cout << array[50]->getBrain()->getRandomIdea(49) << std::endl;
+    // for (i = 0; i < 100; i++)
+	// 	delete array[i];
+	return 0;
 }

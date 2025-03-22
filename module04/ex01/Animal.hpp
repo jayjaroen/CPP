@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 22:06:40 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 18:34:05 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 16:38:06 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Animal
 {
 	protected:
 		std::string _type;
-		// Brain *brain;
 	
 	public:
 		Animal();
@@ -33,7 +32,6 @@ class Animal
 		std::string getType() const;
 		void setType(std::string name);
 		virtual void makeSound() const;
-		virtual Brain* getBrain() const = 0;
 };
 
 #endif
