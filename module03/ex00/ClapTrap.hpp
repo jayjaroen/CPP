@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:04:55 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/13 21:31:34 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:39:36 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 class ClapTrap //Follow the orthodox canical form
 {
-    private:
+	private:
 		std::string	_name;
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;
@@ -42,10 +42,10 @@ class ClapTrap //Follow the orthodox canical form
 
 		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amount);
-        void    beRepaired(unsigned int amount);
-	};
+		void	beRepaired(unsigned int amount);
+};
 	
-	#endif
+#endif
 	// void	setHitPoints(unsigned int points);
 	// void	setEnergyPoints(unsigned int points);
 	// void	setAttackDamage(unsigned int points);

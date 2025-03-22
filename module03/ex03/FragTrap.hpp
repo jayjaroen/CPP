@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:10:02 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/14 14:42:25 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 11:31:03 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define FRAG_ATTACK 30
 # define FRAG_TYPE "FragTrap "
 
-class FragTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
     public:
 		FragTrap();

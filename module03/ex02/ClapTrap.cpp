@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:55:29 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 23:16:31 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:03:36 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,37 @@
 ClapTrap::ClapTrap():_name(""), _hitPoints(Clap_HP), _energyPoints(Clap_ENERGY),\
 	_attackDamage(Clap_ATTACK)
 {
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 	std::cout << "ClapTrap: Default Constructor Called" << std::endl;
 	std::cout << "ClapTrap " << _name << " is created" << std::endl;
 	std::cout << "Hit points init: " << _hitPoints << std::endl;
 	std::cout << "Energy points init: " << _energyPoints << std::endl;
 	std::cout << "Attack damage init: " << _attackDamage << std::endl;
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(Clap_HP),\
 	_energyPoints(Clap_ENERGY), _attackDamage(Clap_ATTACK)
 {
+	
 	std::cout << "ClapTrap: Parameter Constructor Called" << std::endl;
 	std::cout << "ClapTrap " << _name << " is created" << std::endl;
 	std::cout << "Hit points init: " << _hitPoints << std::endl;
 	std::cout << "Energy points init: " << _energyPoints << std::endl;
 	std::cout << "Attack damage init: " << _attackDamage << std::endl;
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
-	// call operator=
+
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << Clap_TYPE << _name << " was destroyed" << std::endl;
+	std::cout << Clap_TYPE << _name << " is destroyed" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &other)
@@ -49,7 +53,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &other)
 	std::cout << "Assignment operator called" << std::endl;
 	if (this != &other)
 	{
-        _name = other.getName();
+		_name = other.getName();
 		_hitPoints = other.getHitPoints();
 		_energyPoints = other.getEnergyPoints();
 		_attackDamage = other.getAttackDamage();
@@ -81,13 +85,13 @@ std::string ClapTrap::getName() const
 
 //////////////////// Member Functions //////////////////////////
 
-void ClapTrap::attack(const std::string &target) // the target is not yet created as other claptrap
+void ClapTrap::attack(const std::string &target)
 {
-	if (_energyPoints > 0 && _hitPoints > 0) // _hitPoints of the target
+	if (_energyPoints > 0 && _hitPoints > 0)
 	{
 		_energyPoints -= 1;
 		std::cout << Clap_TYPE << _name << " attacks " << target << ", "\
-		<< "causing " << _attackDamage << " point of damage" << std::endl; // present the accommulated points of attack damage?
+		<< "causing " << _attackDamage << " point of damage" << std::endl;
 	}
 	else
 	std::cout << Clap_TYPE << _name << " does have enough energy points" << std::endl;
@@ -95,12 +99,11 @@ void ClapTrap::attack(const std::string &target) // the target is not yet create
 
 void ClapTrap::takeDamage(unsigned int amount) 
 {
-	if ((int)amount < 0) // is it necessary, input error function?
-    {
+	if ((int)amount < 0)
+	{
 		std::cout << "takeDamage: Invalid argument: Only positive value is allowed" << std::endl;
 		return ;
 	}
-		// std::cout << "the value of amount is: " << (int) amount << std::endl;
 	if (_hitPoints == 0)
 	{
 		std::cout << Clap_TYPE << _name << "is dead !!" << std::endl;
@@ -118,7 +121,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 	
-void ClapTrap::beRepaired(unsigned int amount)// also decreased in energy points?
+void ClapTrap::beRepaired(unsigned int amount)
 {
 	if ((int)amount < 0)
 	{

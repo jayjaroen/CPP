@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:55:29 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/13 21:32:55 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:24:08 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,25 @@
 ClapTrap::ClapTrap():_name(""), _hitPoints(Clap_HP), _energyPoints(Clap_ENERGY),\
 	_attackDamage(Clap_ATTACK)
 {
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 	std::cout << "ClapTrap: Default Constructor Called" << std::endl;
 	std::cout << "ClapTrap " << _name << " is created" << std::endl;
 	std::cout << "Hit points init: " << _hitPoints << std::endl;
 	std::cout << "Energy points init: " << _energyPoints << std::endl;
 	std::cout << "Attack damage init: " << _attackDamage << std::endl;
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(Clap_HP),\
 	_energyPoints(Clap_ENERGY), _attackDamage(Clap_ATTACK)
 {
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 	std::cout << "ClapTrap: Parameter Constructor Called" << std::endl;
 	std::cout << "ClapTrap " << _name << " is created" << std::endl;
 	std::cout << "Hit points init: " << _hitPoints << std::endl;
 	std::cout << "Energy points init: " << _energyPoints << std::endl;
 	std::cout << "Attack damage init: " << _attackDamage << std::endl;
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &other)
@@ -118,24 +122,25 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 	
-void ClapTrap::beRepaired(unsigned int amount)// also decreased in energy points?
+void ClapTrap::beRepaired(unsigned int amount)
 {
-	// if ((int)amount < 0) // is it necessary, input error function?
-	// {
-		// 	std::cout << "beRepaired: Invalid argument: Only positive value is allowed" << std::endl;
-		// 	return ;
-		// }
-		if (_energyPoints > 0 && _hitPoints > 0)
-		{
-			std::cout << Clap_TYPE << _name << " is repairing and has got " << amount << "hit points" << std::endl;
-			_hitPoints += amount;
-			_energyPoints -= 1;
-		}
-		else
-		{
-			std::cout << Clap_TYPE << _name << " is dead and can't be repaired" << std::endl;
-		}
-}	
+	if ((int)amount < 0)
+	{
+		std::cout << "beRepaired: Invalid argument: Only positive value is allowed" << std::endl;
+		return ;
+	}
+	if (_energyPoints > 0 && _hitPoints > 0)
+	{
+		std::cout << Clap_TYPE << _name << " is repairing and has got " << amount << "hit points" << std::endl;
+		_hitPoints += amount;
+		_energyPoints -= 1;
+	}
+	else
+	{
+		std::cout << Clap_TYPE << _name << " is dead and can't be repaired" << std::endl;
+	}
+}
+
 // void	ClapTrap::setHitPoints(unsigned int points)
 // {
 //     if ((int)points < 0)

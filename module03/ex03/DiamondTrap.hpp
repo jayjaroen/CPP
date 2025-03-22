@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 17:05:02 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/17 22:12:07 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:30:13 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@
 
 class DiamondTrap: public ScavTrap, public FragTrap
 {
-    private:
-        std::string _name;
-    
-    public:
+	private:
+		std::string _name;
+
+	public:
 		DiamondTrap();
-		DiamondTrap(const std::string &name);
+		DiamondTrap(const std::string name);
 		DiamondTrap(DiamondTrap const &other);
 		~DiamondTrap();
 
 		DiamondTrap& operator=(DiamondTrap const &other);
-		
+		std::string getName() const;
+		void	attack(const std::string &target);
 		void	whoAmI(void);
-    
 };
 
 #endif

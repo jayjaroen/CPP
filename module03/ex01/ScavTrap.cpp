@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:34:30 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/21 23:15:36 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:01:42 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ ScavTrap::ScavTrap()
 	_energyPoints = SCAV_ENERGY;
 	_attackDamage = SCAV_ATTACK;
 	
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 	std::cout << "ScavTrap: Default Constructor Called" << std::endl;
 	std::cout << SCAV_TYPE << _name << " is created" << std::endl;
 	std::cout << "Hit points init: " << _hitPoints << std::endl;
 	std::cout << "Energy points init: " << _energyPoints << std::endl;
 	std::cout << "Attack damage init: " << _attackDamage << std::endl;
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string name)
@@ -33,17 +35,18 @@ ScavTrap::ScavTrap(const std::string name)
 	_energyPoints = SCAV_ENERGY;
 	_attackDamage = SCAV_ATTACK;
 	
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 	std::cout << "ScavTrap: Parameter Constructor Called" << std::endl;
 	std::cout << SCAV_TYPE << _name << " is created" << std::endl;
 	std::cout << "Hit points init: " << _hitPoints << std::endl;
 	std::cout << "Energy points init: " << _energyPoints << std::endl;
 	std::cout << "Attack damage init: " << _attackDamage << std::endl;
+	std::cout << "+++++++++++++++++++++++++++++++++++++" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &other): ClapTrap(other)
 {
-    *this = other;
-	// call operator=
+	*this = other;
 }
 
 ScavTrap::~ScavTrap()
@@ -53,25 +56,25 @@ ScavTrap::~ScavTrap()
 
 ScavTrap& ScavTrap::operator=(ScavTrap const &other)
 {
-    if (this != &other) // check again
-    {
-        // ClapTrap::operator=(other); //refer to base class?
-        _name = other.getName();
-        _hitPoints = other.getHitPoints();
-		_energyPoints = other.getEnergyPoints();
-		_attackDamage = other.getAttackDamage();
-    }
-    return *this;
+	if (this != &other)
+	{
+		ClapTrap::operator=(other); // base
+		// _name = other.getName();
+		// _hitPoints = other.getHitPoints();
+		// _energyPoints = other.getEnergyPoints();
+		// _attackDamage = other.getAttackDamage();
+	}
+	return *this;
 }
 
 // member function
 
-void ScavTrap::attack(const std::string &target) // derived from ClapTrap
+void ScavTrap::attack(const std::string &target)
 {
-	if (_energyPoints > 0 && _hitPoints > 0) // _hitPoints of the target // _hitPoints > _energyPoints?
+	if (_energyPoints > 0 && _hitPoints > 0)
 	{
 		std::cout << SCAV_TYPE << _name << " attacks " << target << ", "\
-		<< "causing " << _attackDamage << " point of damage" << std::endl; // present the accommulated points of attack damage?
+		<< "causing " << _attackDamage << " point of damage" << std::endl;
 		_energyPoints -= 1;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:04:46 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/03/15 16:18:18 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:58:24 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 
 class ScavTrap:public ClapTrap
 {
-    public:
-        ScavTrap();
-        ScavTrap(const std::string name);
-        ScavTrap(ScavTrap const &other);
-        ~ScavTrap();
-        
-        ScavTrap& operator=(ScavTrap const &other);
-        void attack(const std::string &target); //Same name as claptrap, how to know when called?
-        void guardGate(); 
+	public:
+		ScavTrap();
+		ScavTrap(const std::string name);
+		ScavTrap(ScavTrap const &other);
+		~ScavTrap();
+
+		ScavTrap& operator=(ScavTrap const &other);
+		void attack(const std::string &target);
+		void guardGate(); 
 };
 
 # endif
