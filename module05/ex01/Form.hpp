@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:00:32 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/17 16:20:28 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/20 18:35:50 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ class Form
         static const int    minGrade = 150;
         const std::string 	    _name;
         bool    			_isSigned;
-        int			    _excuteGrade; // should be a const?
 		int			    _signGrade;
+        int			    _excuteGrade; // should be a const?
 	
 	public:
 		Form();
-        Form(std::string const &name, int excuteGrade, int signGrade);
+        Form(std::string const &name, int signGrade, int excuteGrade);
         ~Form();
         Form(Form const &other);
         Form& operator=(Form const &other);

@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 13:52:59 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/17 20:11:47 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/20 21:54:06 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ Form::Form(): _name(NULL), _isSigned(false), _excuteGrade(), _signGrade()
 
 }
 
-Form::Form(std::string const &name, int excuteGrade, int signGrade): _name(name), \
-_excuteGrade(excuteGrade), _signGrade(signGrade)
+Form::Form(std::string const &name, int signGrade, int excuteGrade): _name(name), \
+_signGrade(signGrade), _excuteGrade(excuteGrade)
 {
 	 if (_excuteGrade < maxGrade || _signGrade < maxGrade)
 		throw GradeTooHighException(); // in case of minus
@@ -92,7 +92,7 @@ std::ostream& operator<<(std::ostream& out, Form &other)
 {
 	out << "Form: " << other.getName() << std::endl;
 	out << "Signed: " << other.isSigned() << std::endl;
-	out << "Grade required to execut: " << other.getExecuteGrade() << std::endl;
+	out << "Grade required to execute: " << other.getExecuteGrade() << std::endl;
 	out << "Grade required to sign: " << other.getSignGrade() << std::endl;
 	return (out);
 }
