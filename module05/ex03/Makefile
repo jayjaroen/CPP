@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+         #
+#    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/10 13:02:38 by jjaroens          #+#    #+#              #
-#    Updated: 2025/06/20 18:24:05 by jjaroens         ###   ########.fr        #
+#    Updated: 2025/06/21 14:57:56 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = aform
+NAME = intern
 
 SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
-		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp 
+		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 HEADER = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp \
-		RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+		RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 
 CC = c++ -Wall -Wextra -Werror -std=c++98
 

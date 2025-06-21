@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 13:52:59 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/20 21:54:06 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/21 15:05:06 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ std::ostream& operator<<(std::ostream& out, Form &other)
 {
 	out << "Form: " << other.getName() << std::endl;
 	out << "Signed: " << other.isSigned() << std::endl;
-	out << "Grade required to execute: " << other.getExecuteGrade() << std::endl;
 	out << "Grade required to sign: " << other.getSignGrade() << std::endl;
+	out << "Grade required to execute: " << other.getExecuteGrade() << std::endl;
 	return (out);
 }

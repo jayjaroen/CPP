@@ -111,8 +111,8 @@ std::ostream& operator<<(std::ostream& out, AForm &other)
 {
 	out << "Form: " << other.getName() << std::endl;
 	out << "Signed: " << other.isSigned() << std::endl;
-	out << "Grade required to execute: " << other.getExecuteGrade() << std::endl;
 	out << "Grade required to sign: " << other.getSignGrade() << std::endl;
+	out << "Grade required to execute: " << other.getExecuteGrade() << std::endl;
 	return (out);
 }
 

@@ -12,13 +12,13 @@
 
 #include "AForm.hpp"
 
-AForm::AForm(): _name(NULL), _isSigned(false), _signGrade(), _executeGrade()
+AForm::AForm(): _name(NULL), _signGrade(), _executeGrade(), _isSigned(false)
 {
 
 }
 
 AForm::AForm(std::string const &name, int signGrade, int executeGrade): _name(name),
-	_signGrade(signGrade), _executeGrade(executeGrade)
+	_signGrade(signGrade), _executeGrade(executeGrade) // isSigned
 {
 	 if (_executeGrade < maxGrade || _signGrade < maxGrade)
 		throw GradeTooHighException(); // in case of minus
@@ -69,12 +69,13 @@ bool AForm::isSigned() const
 	return _isSigned;
 }
 
-void AForm::beSigned(Bureaucrat const &other)
+void AForm::beSigned(Bureaucrat const &other) // change variable name
 {
 	if (other.getGrade() > _signGrade)
 	{
 		throw GradeTooLowException();
 	}
+	// Exception form is already signed
 	_isSigned = true;
 }
 
@@ -111,8 +112,8 @@ std::ostream& operator<<(std::ostream& out, AForm &other)
 {
 	out << "Form: " << other.getName() << std::endl;
 	out << "Signed: " << other.isSigned() << std::endl;
-	out << "Grade required to execute: " << other.getExecuteGrade() << std::endl;
 	out << "Grade required to sign: " << other.getSignGrade() << std::endl;
+	out << "Grade required to execute: " << other.getExecuteGrade() << std::endl;
 	return (out);
 }
 

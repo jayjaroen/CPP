@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:58:00 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/20 23:04:24 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/21 16:25:25 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,27 @@ ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery", 137, 145),\
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target): \
 AForm("Shrubbery", 137, 145), _target(target)
 {
-    
+
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    
+
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other): AForm(other), _target(other.getTarget())
 {
-	// AForm("Shrubbery", 137, 145), _target(other.getTarget()) ?
-    *this = other;
+
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &other)
 {
-    if (this != &other)
-    {
-        AForm::operator=(other);
-    }
-    return *this;
+	if (this != &other)
+	{
+		AForm::operator=(other);
+		// _target = other.getTarget();
+	}
+	return *this;
 }
 
 std::string ShrubberyCreationForm::getTarget() const

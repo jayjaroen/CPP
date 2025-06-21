@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:00:32 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/20 18:35:50 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/21 15:59:44 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ class Bureaucrat;
 class Form
 {
     private:
-        static const int    maxGrade = 1;
+        static const int    maxGrade = 1; // change to macro
         static const int    minGrade = 150;
         const std::string 	    _name;
-        bool    			_isSigned;
 		int			    _signGrade;
         int			    _excuteGrade; // should be a const?
+        bool    			_isSigned;
 	
 	public:
 		Form();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 14:11:24 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/17 15:47:05 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/21 15:53:50 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,31 @@ int main()
 	{
 		Bureaucrat C("C", 0);
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException &e)
 	{
 		std::cout << "Grade to High!" << std::endl;
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
+	
 	std::cout << "Creating a bureaucrat with with grade 151" << std::endl;
 	/* GradeTooLowException */
 	try
 	{
 		Bureaucrat D("D", 151);
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooLowException &e)
 	{
 		std::cout << "Grade too low" << std::endl;
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
+	
 	std::cout << "try promoting A!" << std::endl;
 	/* Increment throwing exception */
 	try
 	{
 		A.increment();
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException &e)
 	{
 		std::cout << "Can't promote -> grade too high" << std::endl;
 		std::cout << "Exception: " << e.what() << std::endl;
@@ -59,9 +61,22 @@ int main()
 	{
 		B.decrement();
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooLowException &e)
 	{
 		std::cout << "Can't demote B -> grade too low" << std::endl;
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
+	try
+	{
+		B.increment();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << B << std::endl;
+	std::cout << A << std::endl;
+	
+	B = A;
+	std::cout << B << std::endl;
 }

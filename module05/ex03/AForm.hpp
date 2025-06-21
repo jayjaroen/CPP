@@ -28,7 +28,6 @@ class AForm
 		int			    _signGrade;
         int			    _executeGrade; // should be a const?
 	
-
         
     public:
 		AForm();

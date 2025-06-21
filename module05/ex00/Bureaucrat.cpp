@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 13:20:00 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/17 15:49:01 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/21 15:46:05 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat(): _name(""), _grade()
 {
-    
+
 }
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name)
@@ -29,51 +29,52 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name)
 
 Bureaucrat::~Bureaucrat()
 {
-    
+
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &other): _name(other.getName()),  _grade(other.getGrade())
+Bureaucrat::Bureaucrat(Bureaucrat const &other): _name(other.getName()), _grade(other.getGrade())
 {
-    *this = other;
+
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const &other)
 {
-    if (this != &other)
-    {
-        // _name = other.getName();
-        _grade = other.getGrade();
-    }
-    return *this;
+	if (this != &other)
+	{
+		_grade = other.getGrade();
+	}
+	return *this;
 }
 
 const std::string& Bureaucrat::getName() const
 {
-    return _name;
+	return _name;
 }
 
 int Bureaucrat::getGrade() const
 {
-    return _grade;
+	return _grade;
 }
 
 void Bureaucrat::increment()
 {
-    if (_grade == _highest)
-        throw GradeTooHighException(); // exit immediately
-    _grade--;
+	if (_grade == _highest)
+	{
+		throw GradeTooHighException(); // exit immediately
+	}
+	_grade--;
 }
 
 void Bureaucrat::decrement()
 {
-    if (_grade == _lowest)
-        throw GradeTooLowException();
-    _grade++;
+	if (_grade == _lowest)
+		throw GradeTooLowException();
+	_grade++;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return ("Grade is higher than the maximum");
+	return ("Grade is higher than the maximum");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()

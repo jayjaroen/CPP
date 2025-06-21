@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 13:04:37 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:32 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/21 15:48:23 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 # define BUREAUCRAT_H
 
 # include <iostream>
+# define _highest 1
+# define _lowest 150
 
 class Bureaucrat
 {
 	private:
-		std::string const	_name;
+		std::string const _name;
 		int					_grade;
-		static const int	_highest = 1;
-		static const int	_lowest = 150;
+		// const int	_highest = 1;
+		// const int	_lowest = 150;
+		
+		Bureaucrat();
 	
 	public:
-		Bureaucrat();
 		Bureaucrat(std::string const &name, int grade);
 		~Bureaucrat();
 		Bureaucrat(Bureaucrat const &other);
