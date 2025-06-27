@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:16:11 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/20 16:04:59 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 22:28:45 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class RobotomyRequestForm: public AForm
 {
 	private:
 		std::string _target;
+		RobotomyRequestForm();
 		
 	public:
-		RobotomyRequestForm();
 		~RobotomyRequestForm();
 		RobotomyRequestForm(std::string const &target);
 		RobotomyRequestForm(RobotomyRequestForm const &other);

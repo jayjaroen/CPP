@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 13:04:37 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/21 15:26:29 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 21:12:35 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include "Form.hpp"
+# define HIGHEST 1
+# define LOWEST 150
 
 class Form;
 
@@ -23,21 +25,22 @@ class Bureaucrat
 	private:
 		std::string const	_name;
 		int					_grade;
-		const int	_highest = 1;
-		const int	_lowest = 150;
+		Bureaucrat();
 	
 	public:
-		Bureaucrat();
 		Bureaucrat(std::string const &name, int grade);
 		~Bureaucrat();
 		Bureaucrat(Bureaucrat const &other);
 		Bureaucrat& operator=(Bureaucrat const &other);
 
-		const std::string& getName() const; //referen std::string&
+		const std::string& getName() const;
 		int getGrade() const;
+		
 		// increment && discrement grade
 		void increment();
 		void decrement();
+
+		// signForm
 		void signForm(Form &form);
 		
 		// nested class

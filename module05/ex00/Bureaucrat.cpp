@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 13:20:00 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/21 15:46:05 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 20:51:46 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat(): _name(""), _grade()
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name)
 {
-	if (grade < _highest) //1
+	if (grade < HIGHEST) //1
 		throw GradeTooHighException();
-	else if (grade > _lowest) //150
+	else if (grade > LOWEST) //150
 		throw GradeTooLowException();
 	else
 		_grade = grade;
@@ -58,7 +58,7 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::increment()
 {
-	if (_grade == _highest)
+	if (_grade == HIGHEST)
 	{
 		throw GradeTooHighException(); // exit immediately
 	}
@@ -67,7 +67,7 @@ void Bureaucrat::increment()
 
 void Bureaucrat::decrement()
 {
-	if (_grade == _lowest)
+	if (_grade == LOWEST)
 		throw GradeTooLowException();
 	_grade++;
 }
@@ -79,7 +79,7 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("Grade is lower than minimum");
+    return ("Grade is lower than the minimum");
 }
 
 std::ostream& operator<<(std::ostream& out, Bureaucrat& b)

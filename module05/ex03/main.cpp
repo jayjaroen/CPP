@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 14:34:19 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/21 15:17:58 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 23:18:57 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main ()
 
 	robo = intern.makeForm("robotomy request", "cat");
 	std::cout << "Printing the Robotomy Form" << std::endl;
-	std::cout << *robo << std::endl;
+	std::cout << *robo << std::endl;	
 	
 	president = intern.makeForm("presidential pardon", "dog");
 	std::cout << "Printing the President Request Form" << std::endl;

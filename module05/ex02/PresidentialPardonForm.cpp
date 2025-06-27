@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:11:03 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/20 23:01:50 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 22:27:47 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,9 @@ PresidentPardonForm::~PresidentPardonForm()
 
 }
 
-PresidentPardonForm::PresidentPardonForm(PresidentPardonForm const &other)
+PresidentPardonForm::PresidentPardonForm(PresidentPardonForm const &other): AForm(other), _target(other.getTarget())
 {
-    //AForm("President Pardon", 25, 5), _target(target)
-    *this = other;
+
 }
 
 PresidentPardonForm& PresidentPardonForm::operator=(PresidentPardonForm const &other)
@@ -40,6 +39,7 @@ PresidentPardonForm& PresidentPardonForm::operator=(PresidentPardonForm const &o
     if (this != &other)
     {
         AForm::operator=(other);
+		_target = other.getTarget();
     }
     return *this;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 13:20:00 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/21 16:08:06 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 22:07:17 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat(): _name(""), _grade()
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name)
 {
-	if (grade < _highest) //1
+	if (grade < HIGHEST) //1
 		throw GradeTooHighException();
-	else if (grade > _lowest) //150
+	else if (grade > LOWEST) //150
 		throw GradeTooLowException();
 	else
 		_grade = grade;
@@ -34,14 +34,13 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(Bureaucrat const &other): _name(other.getName()),  _grade(other.getGrade())
 {
-    *this = other;
+
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const &other)
 {
     if (this != &other)
     {
-        // _name = other.getName();
         _grade = other.getGrade();
     }
     return *this;
@@ -59,14 +58,14 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::increment()
 {
-    if (_grade == _highest)
+    if (_grade == HIGHEST)
         throw GradeTooHighException(); // exit immediately
     _grade--;
 }
 
 void Bureaucrat::decrement()
 {
-    if (_grade == _lowest)
+    if (_grade == LOWEST)
         throw GradeTooLowException();
     _grade++;
 }
@@ -76,13 +75,18 @@ void Bureaucrat::signForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << _name << "signed " << form.getName() << std::endl;
+		std::cout << _name << " signed " << form.getName() << std::endl;
 	}
-	catch (std::exception &e)
+	catch (Bureaucrat::GradeTooHighException &e)
 	{
 		std::cout << _name << " couldn't sign " << form.getName() \
 		<< " because " << e.what() << std::endl;
 	}
+    catch (Bureaucrat::GradeTooLowException &e)
+    {
+        std::cout << _name << " couldn't sign " << form.getName() \
+		<< " because " << e.what() << std::endl;
+    }
 	// detail catch exception
 }
 

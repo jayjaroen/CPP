@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:07:14 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/20 18:11:10 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 22:26:06 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class PresidentPardonForm: public AForm
 {
     private:
 		std::string		_target;
+		PresidentPardonForm();
 	
 	public:
-		PresidentPardonForm();
 		PresidentPardonForm(std::string const &target);
 		~PresidentPardonForm();
 		PresidentPardonForm(PresidentPardonForm const &other);

@@ -12,17 +12,17 @@
 
 #include "AForm.hpp"
 
-AForm::AForm(): _name(NULL), _signGrade(), _executeGrade(), _isSigned(false)
+AForm::AForm(): _name(NULL), _isSigned(false), _signGrade(), _executeGrade()
 {
 
 }
 
 AForm::AForm(std::string const &name, int signGrade, int executeGrade): _name(name),
-	_signGrade(signGrade), _executeGrade(executeGrade) // isSigned
+	_signGrade(signGrade), _executeGrade(executeGrade)
 {
-	 if (_executeGrade < maxGrade || _signGrade < maxGrade)
-		throw GradeTooHighException(); // in case of minus
-	else if (_executeGrade > minGrade || _signGrade > minGrade)
+	 if (_executeGrade < MAX || _signGrade < MAX)
+		throw GradeTooHighException(); // in case of MINus
+	else if (_executeGrade > MIN || _signGrade > MIN)
 		throw GradeTooLowException();
 	_isSigned = false; //default as false
 }
@@ -35,15 +35,13 @@ AForm::~AForm()
 AForm::AForm(AForm const &other): _name(other.getName()), _isSigned(other.isSigned()), \
 	 _signGrade(other.getSignGrade()), _executeGrade(other.getExecuteGrade())
 {
-	// implement the same logic as above?
+	
 }
 
 AForm& AForm::operator=(AForm const &other)
 {
 	if (this != &other)
 	{
-		_signGrade = other.getSignGrade();
-		_executeGrade = other.getExecuteGrade();
 		_isSigned = other.isSigned();
 	}
 	return *this;
@@ -69,24 +67,27 @@ bool AForm::isSigned() const
 	return _isSigned;
 }
 
-void AForm::beSigned(Bureaucrat const &other) // change variable name
+void AForm::beSigned(Bureaucrat const &other)
 {
 	if (other.getGrade() > _signGrade)
 	{
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	}
-	// Exception form is already signed
+	if (isSigned())
+	{
+		throw RepeatedSignedFormException();
+	}
 	_isSigned = true;
 }
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
-	return ("The Bureaucrat grade is too high.");
+	return ("The required grade is too high.");
 }
 
 const char *AForm::GradeTooLowException::what() const throw()
 {
-	return ("The Bureaucrat grade is too low.");
+	return ("The required grade is too low.");
 }
 
 const char *AForm::InvalidFormException::what() const throw()
@@ -94,14 +95,19 @@ const char *AForm::InvalidFormException::what() const throw()
 	return ("The form is not signed.");
 }
 
+const char *AForm::RepeatedSignedFormException::what() const throw()
+{
+	return ("The form is already signed. Can't be resigned.");
+}
+
 void AForm::checkExecuteValid(Bureaucrat const &executor) const
 {
 	//check grade 
 	if (executor.getGrade() > _executeGrade)
 	{
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	}
-	// neccessary ? to be signed first && execute?
+	// sign first and then execute
 	if (!isSigned())
 	{
 		throw InvalidFormException();

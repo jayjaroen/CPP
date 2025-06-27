@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:58:00 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/21 16:25:25 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 22:30:50 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	if (this != &other)
 	{
 		AForm::operator=(other);
-		// _target = other.getTarget();
+		_target = other.getTarget();
 	}
 	return *this;
 }

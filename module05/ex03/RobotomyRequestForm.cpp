@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 16:05:20 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/20 23:02:46 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/27 22:29:12 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other): AForm(other), _target(other.getTarget())
 {
-	// AForm("Robotomy", 72, 45), _target(target), _target(other.getTarget())
-    *this = other;
+    
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &other)
@@ -39,6 +38,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &o
     if (this != &other)
     {
         AForm::operator=(other);
+		_target = other.getTarget();
     }
 	return *this;
 }
