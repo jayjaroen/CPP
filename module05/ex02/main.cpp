@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 09:21:43 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/27 22:59:07 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/28 15:28:53 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,14 @@ int main()
     catch (Bureaucrat::GradeTooLowException &error)
     {
         std::cerr << error.what() << std::endl;
+		delete form;
+        form = NULL;
     }
     catch (AForm::InvalidFormException &error)
     {
         std::cerr << error.what() << std::endl;
+		delete form;
+        form = NULL;
     }
     try
     {
@@ -52,6 +56,8 @@ int main()
     catch (AForm::InvalidFormException &error)
     {
         std::cerr << error.what() << std::endl;
+		delete form;
+        form = NULL;
     }
     std::cout << "***************Robotomy Form ********************" << std::endl;
     {
@@ -78,10 +84,14 @@ int main()
         catch(Bureaucrat::GradeTooLowException &error)
         {
             std::cerr << error.what() << std::endl;
+			delete form;
+			form = NULL;
         }
         catch (AForm::InvalidFormException &error)
         {
-        std::cerr << error.what() << std::endl;
+        	std::cerr << error.what() << std::endl;
+			delete form;
+			form = NULL;
         }
     }
     std::cout << "***************Shrubbery Creation Form**************" << std::endl;
@@ -97,10 +107,14 @@ int main()
     }
     catch(Bureaucrat::GradeTooHighException &error)
     {
-        std::cout << error.what() << std::endl;;
+        std::cout << error.what() << std::endl;
+		delete form;
+        form = NULL;
     }
     catch(Bureaucrat::GradeTooLowException &error)
     {
         std::cout << error.what() << std::endl;
+		delete form;
+        form = NULL;
     }
 }

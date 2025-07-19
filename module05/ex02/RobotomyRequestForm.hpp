@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:16:11 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/06/27 22:28:45 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/06/28 15:25:03 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ROBO_H
 
 # include "AForm.hpp"
+# include <cstdlib>
 
 class RobotomyRequestForm: public AForm
 {
