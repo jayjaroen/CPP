@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 14:00:20 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/27 11:21:24 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/27 14:29:10 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void doubleConverter(std::string const &argv)
 	else if (i < 32 || i == 127)
 		std::cout << "char: Non displayable" << std::endl;
 	else
-		std::cout << "char: " << static_cast<char>(i) << std::endl;
+		std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(i) << std::endl;
 	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << std::endl;
 	std::cout << "double: " << std::fixed << std::setprecision(1) << i << std::endl;
@@ -87,7 +87,6 @@ static void checkDouble(std::string const &argv)
 			dot = true;
 		i++;
 	}
-	std::cout << "the value of i: " << i << std::endl;
 	if (i == argv.length() - 1)
 		doubleConverter(argv);
 	else
@@ -107,7 +106,7 @@ static void floatConverter(std::string const &argv)
 	else if (i < 32 || i == 127)
 		std::cout << "char: Non displayable" << std::endl;
 	else
-		std::cout << "char: " << static_cast<char>(i) << std::endl;
+		std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(i) << std::endl;
 	std::cout << "float: " << std::fixed << std::setprecision(1) << i << "f" << std::endl;
 	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << std::endl;
@@ -127,7 +126,6 @@ static void checkFloat(std::string const &argv)
 			dot = true;
 		i++;
 	}
-	std::cout << "the value of" << i << std::endl;
 	if (i == argv.length() - 2)
 		floatConverter(argv);
 	else
@@ -168,7 +166,7 @@ static void minInfConverter()
 static void charConverter(std::string const &argv)
 {
 	// std::cout << "Entering char converter" << std::endl;	
-	std::cout << "char: " << argv[0] << std::endl;
+	std::cout << "char: '" << argv[0] << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(argv[0]) << std::endl;
 	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(argv[0]) << "f" << std::endl;
 	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(argv[0]) << std::endl;

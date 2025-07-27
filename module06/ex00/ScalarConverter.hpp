@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:55:00 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/26 23:08:52 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/27 14:23:12 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include <iomanip> //std::fixed std::setprecision
 # include <limits>
+# include <cstdlib>
 
 class ScalarConverter
 {
