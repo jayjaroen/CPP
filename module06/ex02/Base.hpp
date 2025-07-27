@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 23:17:17 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/18 23:19:10 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/27 14:14:23 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 class Base
 {
-    public:
-		  virtual ~Base();
+	public:
+		virtual ~Base();
 };
 
 #endif

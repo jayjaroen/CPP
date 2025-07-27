@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:21:54 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/27 12:10:31 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/27 14:15:53 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <time.h>
 #include <cstdlib>
 #include <iostream>
+#include <exception>
 
 
 Base *generate(void)
@@ -55,7 +56,7 @@ void identify(Base &p)
 		ptr = dynamic_cast<A&>(p);
 		std::cout << "Type: A" << std::endl;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -64,7 +65,7 @@ void identify(Base &p)
 		ptr = dynamic_cast<B&>(p);
 		std::cout << "Type: B" << std::endl;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -73,7 +74,7 @@ void identify(Base &p)
 		ptr = dynamic_cast<C&>(p);
 		std::cout << "Type: C" << std::endl;
 	}
-	catch(const std::bad_cast& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -139,3 +140,5 @@ int	main(void)
 	delete base;
 	std::cout << std::endl;
 }
+
+//<typeinfo is forbidden>

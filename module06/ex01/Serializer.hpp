@@ -13,7 +13,7 @@
 #ifndef SERIALIZER_H
 # define SERIALIZER_H
 
-# include <cstdint> // uintptr_t
+# include <stdint.h> // uintptr_t
 # include <iostream>
 # include "Data.hpp"
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 23:18:47 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/19 11:30:24 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/27 14:14:12 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,7 @@
 
 class A : public Base
 {
-    private:
-		~A();
-		A(A const &other);
-		A& operator=(A const &other);
-	
-	public:
-		A();
+
 };
 
 #endif

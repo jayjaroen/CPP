@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+         #
+#    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/28 11:36:44 by jjaroens          #+#    #+#              #
-#    Updated: 2025/07/19 11:21:42 by jjaroens         ###   ########.fr        #
+#    Updated: 2025/07/27 13:49:19 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = base
 
-SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRC = main.cpp Base.cpp
 
 HEADER = Base.hpp A.hpp B.hpp C.hpp
 
