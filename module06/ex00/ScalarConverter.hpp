@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:55:00 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/19 11:57:33 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/26 23:08:52 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# include <iomanip>
+# include <iomanip> //std::fixed std::setprecision
 # include <limits>
 
 class ScalarConverter

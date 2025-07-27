@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:21:54 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/19 11:56:40 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/27 12:10:31 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void identify(Base &p)
 		ptr = dynamic_cast<A&>(p);
 		std::cout << "Type: A" << std::endl;
 	}
-	catch(const std::exception& e)
+	catch(const std::bad_cast& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -64,7 +64,7 @@ void identify(Base &p)
 		ptr = dynamic_cast<B&>(p);
 		std::cout << "Type: B" << std::endl;
 	}
-	catch(const std::exception& e)
+	catch(const std::bad_cast& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -73,7 +73,7 @@ void identify(Base &p)
 		ptr = dynamic_cast<C&>(p);
 		std::cout << "Type: C" << std::endl;
 	}
-	catch(const std::exception& e)
+	catch(const std::bad_cast& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

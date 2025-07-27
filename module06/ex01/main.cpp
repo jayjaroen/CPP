@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 22:50:09 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/18 23:00:51 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/27 12:00:35 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(void)
 
     uintptr_t raw = Serializer::serialize(&original);
     Data* result = Serializer::deserialize(raw);
+    int fail = Serializer::deserialize(raw);
 
     std::cout << "Original ptr: " << &original << std::endl;
     std::cout << "Deserialized ptr: " << result << std::endl;
@@ -29,6 +30,6 @@ int main(void)
     else
         std::cout << "The pointers didn't match!" << std::endl;
     
-    std::cout << "Result Td: " << result->id << ", Name: " << result->name << std::endl;
+    std::cout << "Result Id: " << result->id << ", Name: " << result->name << std::endl;
     return (0);
 }
