@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:34:41 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/27 11:18:00 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/07/30 22:34:00 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     {
         std::cerr << "Invalid argument" << std::endl;
         return (1);
-    }      
+    }     
     ScalarConverter::convert(argv[1]);
     return (0);
 }

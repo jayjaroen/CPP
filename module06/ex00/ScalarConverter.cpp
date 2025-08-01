@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 14:00:20 by jjaroens          #+#    #+#             */
-/*   Updated: 2025/07/27 14:29:10 by jjaroens         ###   ########.fr       */
+/*   Updated: 2025/08/01 20:57:33 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ ScalarConverter& ScalarConverter::operator=(ScalarConverter const &other)
 
 static void error()
 {
-	// std::cout << "Entering error" << std::endl;
-	std::cout << "char: error" << std::endl;
-	std::cout << "int: error"  << std::endl;
-	std::cout << "float: error" << std::endl;
-	std::cout << "double: error" << std::endl;
+	std::cerr << "Entering error" << std::endl;
+	std::cerr << "char: error" << std::endl;
+	std::cerr << "int: error"  << std::endl;
+	std::cerr << "float: error" << std::endl;
+	std::cerr << "double: error" << std::endl;
 }
 
 static void intConverter(std::string const &argv)
@@ -74,28 +74,6 @@ static void doubleConverter(std::string const &argv)
 	
 }
 
-static void checkDouble(std::string const &argv)
-{
-	// std::cout << "Entering checkDouble function" << std::endl;
-	long unsigned int i = 0;
-	bool dot = false;
-	if (argv[i] == '-' || argv[i] == '+')
-		i++;
-	while (i < argv.length() - 1 && (std::isdigit(argv[i]) || ((argv[i] == '.') &&!dot)))
-	{
-		if (argv[i] == '.')
-			dot = true;
-		i++;
-	}
-	if (i == argv.length() - 1)
-		doubleConverter(argv);
-	else
-	{
-		std::cout << "Double error" << std::endl;
-		error();
-	}
-}
-
 static void floatConverter(std::string const &argv)
 {
 	// std::cout << "Entering floatConverter" << std::endl;
@@ -112,27 +90,34 @@ static void floatConverter(std::string const &argv)
 	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << std::endl;
 }
 
-static void checkFloat(std::string const &argv)
+bool checkFormat(std::string const &argv)
 {
-	// std::cout << "Entering checkFloat function" << std::endl;
+	// std::cout << "Entering checkFormat function" << std::endl;
 	long unsigned int i = 0;
 	bool dot = false;
-	// reducing f at the end
+	// std::cout << "checking length " << argv.length() - 1 << std::endl;
 	if (argv[i] == '-' || argv[i] == '+')
 		i++;
-	while (i < argv.length() - 2 && (std::isdigit(argv[i]) || (argv[i] == '.' && !dot)))
+	while (i < argv.length() - 1)
 	{
-		if (argv[i] == '.')
+		// std::cout << "inside loop i " << i << std::endl;
+		if (std::isdigit(argv[i]))
+			i++;
+		else if (argv[i] == '.' && !dot)
+		{
 			dot = true;
-		i++;
+			i++;
+		}
+		else if (argv[i] == '.' && dot)
+			break;
+		else
+			break;
 	}
-	if (i == argv.length() - 2)
-		floatConverter(argv);
+	// std::cout << "the i pos " << i << std::endl;
+	if (argv[i] == '.' || i != argv.length() - 1)
+		return (false);
 	else
-	{
-		std::cout << "Float form error" << std::endl;
-		error();
-	}
+		return (true);
 }
 
 static void nanConverter()
@@ -141,8 +126,10 @@ static void nanConverter()
 	
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: " << std::numeric_limits<float>::quiet_NaN() << "f" << std::endl;
-	std::cout << "double: " << std::numeric_limits<double>::quiet_NaN() << std::endl;
+	std::cout << "float: nanf" << std::endl;
+	std::cout << "double: nan" << std::endl;
+	// std::cout << "float: " << std::numeric_limits<float>::quiet_NaN() << "f" << std::endl;// forbidden
+	// std::cout << "double: " << std::numeric_limits<double>::quiet_NaN() << std::endl;
 }
 
 static void maxInfConverter()
@@ -150,8 +137,10 @@ static void maxInfConverter()
 	// std::cout << "Entering maxInfConverter" << std::endl;	
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: " << std::numeric_limits<float>::infinity() << "f"  << std::endl;
-	std::cout << "double: " << std::numeric_limits<double>::infinity() << std::endl;
+	std::cout << "float: inff" << std::endl;
+	std::cout << "double: inf" << std::endl;
+	// std::cout << "float: " << std::numeric_limits<float>::infinity() << "f"  << std::endl; // forbidden
+	// std::cout << "double: " << std::numeric_limits<double>::infinity() << std::endl;
 }
 
 static void minInfConverter()
@@ -159,8 +148,10 @@ static void minInfConverter()
 	// std::cout << "Entering minInfConverter" << std::endl;
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: " << -std::numeric_limits<float>::infinity() << "f" << std::endl;
-	std::cout << "double: " << -std::numeric_limits<double>::infinity() << std::endl;
+	std::cout << "float: -inff" << std::endl;
+	std::cout << "double: -inf" << std::endl;
+	// std::cout << "float: " << -std::numeric_limits<float>::infinity() << "f" << std::endl;
+	// std::cout << "double: " << -std::numeric_limits<double>::infinity() << std::endl;
 }
 
 static void charConverter(std::string const &argv)
@@ -197,17 +188,29 @@ bool isAllDigit(std::string const &argv)
 	return (true);		
 }
 
+void nonAlphaConverter(std::string const &argv)
+{
+	// std::cout << "Entering print char converter" << std::endl;
+	
+	std::cout << "char: '" << argv[0] << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(argv[0]) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(argv[0]) << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(argv[0]) << std::endl;
+}
+
 void ScalarConverter::convert(std::string const &argv)
 {
 	if (std::isalpha(argv[0]) || argv == "-inf" || argv == "-inff" || argv == "+inf"
 		|| argv == "+inff" || argv == "nan" || argv == "nanf" )
 		charPseudoHandler(argv);
 	else if (argv[argv.length() - 1] == 'f')
-		 checkFloat(argv);
+		checkFormat(argv) ? floatConverter(argv) : error();
 	else if (argv.find('.') != std::string::npos)
-		checkDouble(argv);
+		checkFormat(argv) ? doubleConverter(argv) : error();
 	else if (isAllDigit(argv))
 		intConverter(argv);
+	else if (std::isprint(argv[0]))
+		nonAlphaConverter(argv);
 	else
 		error();
 }
