@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
+#    By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/28 11:36:44 by jjaroens          #+#    #+#              #
-#    Updated: 2025/07/19 16:38:46 by jjaroens         ###   ########.fr        #
+#    Updated: 2025/08/24 14:33:43 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,16 @@ $(NAME): $(OBJ) $(HEADER)
 
 $(OBJ_DIR)%.o: %.cpp $(HEADER) Makefile
 		@mkdir -p $(OBJ_DIR)
-		$(CC) -I. -o $@ -c $<
+# 		$(CC) -I. -o $@ -c $<
+		$(CC) -o $@ -c $<
 
 clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
+
+	
 
 re: fclean all
 
